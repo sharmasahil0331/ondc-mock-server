@@ -23,6 +23,9 @@ message:
           descriptor:
             name: Auto Ride
             code: RIDE
+          price: 
+            currency: INR
+            value: "86"  
           tags:
             groups/1/descriptor/name: Daytime Charges
             groups/1/descriptor/code: fare_policy
