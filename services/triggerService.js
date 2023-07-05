@@ -1,6 +1,6 @@
-const config = require("../utils/config");
-const log = require("../utils/logger");
-const axios = require("axios");
+const config = require('../utils/config');
+const log = require('../utils/logger');
+const axios = require('axios');
 
 //getting path object from config file
 
@@ -8,20 +8,20 @@ var logger;
 
 const trigger = (context, config, data) => {
   logger = log.init();
-  let uri = context.response_uri;
+  let uri = 'http://localhost:2010/';
   let api = config.callback;
   let delay = config.delay;
   try {
-    logger.info("Inside trigger service");
+    console.log('uri', uri, uri + api);
+    logger.info('Inside trigger service');
     setTimeout(() => {
       axios
         .post(`${uri + api}`, data)
         .then((response) => {
-          logger.info(
-            `Triggered ${api} response at ${uri}${api}`
-          );
+          logger.info(`Triggered ${api} response at ${uri}${api}`);
         })
         .catch(function (error) {
+          console.log(error);
           logger.error(error);
         });
     }, delay);
