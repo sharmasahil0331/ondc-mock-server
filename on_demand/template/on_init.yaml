@@ -1,8 +1,8 @@
 template:
   data:
-    $ref: "../payloads/on_init.yaml"
+    $ref: '../payloads/on_init.yaml'
   dict:
-    bpp_uri: http://localhost:5500/
+    bpp_uri: http://mobility-seller-preprod.ondc.org/
     bpp_id: localhost:5500
     bpp_name: Test Name
     provider_name: Nama yatri
@@ -12,16 +12,16 @@ template:
     price: 350INR
     payment_type: ON-FULLFILMENT
     collected_by: BPP
-    city_code: 
-      $ref: "../operations/req_body.yaml#/context_city"
+    city_code:
+      $ref: '../operations/req_body.yaml#/context_city'
     bap_id:
-      $ref: "../operations/req_body.yaml#/bap_id"
+      $ref: '../operations/req_body.yaml#/bap_id'
     bap_uri:
-      $ref: "../operations/req_body.yaml#/bap_uri"
+      $ref: '../operations/req_body.yaml#/bap_uri'
     txn_id:
-      $ref: "../operations/req_body.yaml#/transaction_id"
+      $ref: '../operations/req_body.yaml#/transaction_id'
     msg_id:
-      $ref: "../operations/req_body.yaml#/message_id"
+      $ref: '../operations/req_body.yaml#/message_id'
     timestamp:
       operation:
         type: GENERATE_TIMESTAMP
@@ -29,10 +29,9 @@ template:
       operation:
         type: READ
         input:
-          value: "req_body.message.intent.fulfillment.start.location.gps"
+          value: 'req_body.message.intent.fulfillment.start.location.gps'
     end_gps:
       operation:
         type: READ
         input:
-          value: "req_body.message.intent.fulfillment.end.location.gps"
-
+          value: 'req_body.message.intent.fulfillment.end.location.gps'
