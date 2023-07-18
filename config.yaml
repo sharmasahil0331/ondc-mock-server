@@ -1,6 +1,6 @@
 server:
   type: BPP 
-  port: 5500 
+  port: 8080 
   sync_mode: true
 security:
   verify_sign: false
