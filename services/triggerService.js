@@ -8,7 +8,7 @@ var logger;
 
 const trigger = (context, config, data) => {
   logger = log.init();
-  let uri = 'https://mobility-buyer-preprod.ondc.org/';
+  let uri = 'https://mobility-buyer-preprod.ondc.org/v1/';
   let api = config.callback;
   let delay = config.delay;
   try {
